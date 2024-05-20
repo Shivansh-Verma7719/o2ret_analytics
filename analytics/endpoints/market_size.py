@@ -32,7 +32,6 @@ def get_market_size():
     #Get the data from the Google Sheets
     a = get_sheet(url_pincode)
     b = get_sheet(url_population)
-    print(a)
 
     #Name of File
     workbook=xs.Workbook("Excel_File.xlsx")
