@@ -9,12 +9,11 @@ from selenium.common.exceptions import TimeoutException
 import time
 import csv
 
-def blinkit():
+def blinkit(keyword, pincode):
     driver_path = r"C:\Users\shiva\chromedriver_win32\chromedriver.exe"
 
     # Create ChromeOptions object
     options = Options()
-    query = input("Enter the product you want to search: ")
 
     # Set desired capabilities
     options.add_argument("--start-maximized")  # Maximize the browser window on startup
@@ -23,7 +22,7 @@ def blinkit():
     driver = webdriver.Chrome(options=options)
 
     # Navigate to the desired website
-    driver.get(f'https://blinkit.com/s/?q={query}')
+    driver.get(f'https://blinkit.com/s/?q={keyword}')
 
     # Find the location input field
     location_input_xpath = '/html/body/div[1]/div/div/div[1]/header/div[2]/div[2]/div/div/div/div/div/div[2]/div[2]/div/div[2]/div/div/div/input'
@@ -35,10 +34,12 @@ def blinkit():
     # Clear the location input field
     location_input.clear()
 
+    pin1 = pincode[:3]
+    pin2 = pincode[3:]
     # Type "110001" directly into the location input field
-    location_input.send_keys("110")
+    location_input.send_keys(pin1)
     time.sleep(1)
-    location_input.send_keys("001")
+    location_input.send_keys(pin2)
     time.sleep(1)
 
 
@@ -49,7 +50,6 @@ def blinkit():
     if autocomplete_options:
         print("Autocomplete options found successfully.")
 
-    # Iterate through the autocomplete options and select "New Delhi, Delhi 110001, India"
     for option in autocomplete_options:
         if option.text == "New Delhi, Delhi 110001, India":
             try:
@@ -62,74 +62,45 @@ def blinkit():
             except Exception as e:
                 print("Exception occurred while clicking:", str(e))
 
+    product_details = []
+    count = 0
 
-    product_names = []
-    delivery_times = []
-    prices_to_consumer = []
-    actual_prices = []
-    discounts = []
-
-    for i in range(2, 21):
+    for i in range(1, 21):
         try:
-            
             xpath = f'//*[@id="app"]/div/div/div[3]/div/div/div[2]/div[1]/div/div/div/div[2]/div[2]/a[{i}]'
             card = driver.find_element(By.XPATH, xpath)
             
             # Extract product name
             product_name_element = card.find_element(By.XPATH, f'{xpath}/div/div[3]/div[2]/div[1]/div[1]')
             product_name = product_name_element.text
-            product_names.append(product_name)
-
-            # # Extract product quantity
-            # product_quantity_element = card.find_element(By.XPATH, f'{xpath}/div/div[3]/div[2]/div[1]/div[2]/div/div[1]')
-            # product_quantity = product_quantity_element.text
-            # product_quantities.append(product_quantity)
             
+            # Check if keyword is in the product name
+            if keyword.lower() in product_name.lower():
+                count += 1
+
             # Extract delivery time
             delivery_time_element = card.find_element(By.XPATH, f'{xpath}/div/div[3]/div[1]/div[1]/div/div[2]')
             delivery_time = delivery_time_element.text
-            delivery_times.append(delivery_time)
             
             # Extract price to consumer
             price_to_consumer_element = card.find_element(By.XPATH, f'{xpath}/div/div[3]/div[2]/div[2]/div[1]/div[1]')
             price_to_consumer = price_to_consumer_element.text
-            prices_to_consumer.append(price_to_consumer)
-            
-            # Extract actual price
-            actual_price_element = card.find_element(By.XPATH, f'{xpath}/div/div[3]/div[2]/div[2]/div[1]/div[2]')
-            actual_price = actual_price_element.text
-            actual_prices.append(actual_price)
             
             # Extract discount
             discount_element = card.find_element(By.XPATH, f'{xpath}/div/div[1]/div')
             discount = discount_element.text
-            discounts.append(discount)
+            
+            # Combine details into a single string
+            product_detail = f"{product_name},{delivery_time},{price_to_consumer},{discount}"
+            product_details.append(product_detail)
+            
         except NoSuchElementException as e:
             print(f"Error occurred while scraping product {i}: {e}")
             pass
 
-    # for i in range(len(product_names)):
-    #     print("Product Name:", product_names[i])
-    #     # print("Product Quantity:", product_quantities[i])
-    #     print("Delivery Time:", delivery_times[i])
-    #     print("Price to Consumer:", prices_to_consumer[i])
-    #     print("Actual Price:", actual_prices[i])
-    #     print("Discount:", discounts[i])
-    #     print("---------------------------------------")
+    driver.quit()
 
-    data_rows = list(zip(product_names, delivery_times, prices_to_consumer, actual_prices, discounts))
-
-    csv_file_path = 'product_data.csv'
-
-    headers = ["product_names", "delivery_times", "prices_to_consumer", "actual_prices", "discounts"]
-
-    with open(csv_file_path, 'w', newline='', encoding='utf-8') as csvfile:
-        writer = csv.writer(csvfile)
-        
-        writer.writerow(headers)
-        
-        for row in data_rows:
-            writer.writerow(row)
+    return product_details, f"{count}/{len(product_details)}"
 
 
 def vishal_mm(query):
