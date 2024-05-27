@@ -60,3 +60,6 @@ def convert_to_kml():
     # Write the updated KML content to a new file
     with open(output_kml_file, 'w') as file:
         file.write(kml_content)
+
+if __name__ == '__main__':
+    convert_to_kml()
