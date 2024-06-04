@@ -27,7 +27,7 @@ def prosperityIndex():
     url_prosperity = 'https://docs.google.com/spreadsheets/d/13rebDqDJG0eqxq8bnBP08WZ0iX2Yg9XGngwbymw8zr8'
     a = get_sheet(url_pincode)
     c = get_sheet(url_prosperity)
-    headers=["PinCodes","Name","Total- Adjusted average household size","Total- (0.6×Percentage of Total Good)+(0.1×Percentage of Households with Internet)+(0.1×Percentage of Households with Car/Jeep/Van)+(0.1×Percentage of Permanent Structures)+(0.1×Percentage of Households availing Banking Services)","Total- Married Couples per household","Rural- Adjusted average household size","Rural- (0.6×Percentage of Total Good)+(0.1×Percentage of Households with Internet)+(0.1×Percentage of Households with Car/Jeep/Van)+(0.1×Percentage of Permanent Structures)+(0.1×Percentage of Households availing Banking Services)","Rural- Married Couples per household","Urban- Adjusted average household size","Urban- (0.6×Percentage of Total Good)+(0.1×Percentage of Households with Internet)+(0.1×Percentage of Households with Car/Jeep/Van)+(0.1×Percentage of Permanent Structures)+(0.1×Percentage of Households availing Banking Services)","Urban- Married Couples per household"]
+    headers=["PinCodes","Name","Total- Adjusted average household size","Total- Pincode Prosperity Score","Total- Married Couples per household","Rural- Adjusted average household size","Rural- Pincode Prosperity Score","Urban- Pincode Prosperity Score","Urban- Married Couples per household"]
     result=pd.DataFrame(columns=headers)
     i=6
     while(i<93):

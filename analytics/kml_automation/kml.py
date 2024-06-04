@@ -18,10 +18,6 @@ def convert_to_kml():
             pincode = row['Pincode']
             data[pincode] = row
 
-    # for pincode, values in data.items():
-    #     print(pincode, values)
-
-    # Read the template KML file
     with open(template_kml_file, 'r') as file:
         kml_content = file.read()
 
@@ -57,7 +53,6 @@ def convert_to_kml():
                                         f'<SimpleData name="Market Penetration">{values["Market Penetration"]}</SimpleData>\n'
                                         f'<SimpleData name="Expansion Score">{values["Expansion Score"]}</SimpleData>\n')
 
-    # Write the updated KML content to a new file
     with open(output_kml_file, 'w') as file:
         file.write(kml_content)
 

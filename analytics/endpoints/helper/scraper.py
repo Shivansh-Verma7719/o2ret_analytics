@@ -50,8 +50,10 @@ def blinkit(keyword, pincode):
     if autocomplete_options:
         print("Autocomplete options found successfully.")
 
+    flag = False
     for option in autocomplete_options:
-        if option.text == "New Delhi, Delhi 110001, India":
+        if option.text == f"New Delhi, Delhi {pincode}, India":
+            flag = True
             try:
                 # Scroll to the element using JavaScript
                 driver.execute_script("arguments[0].scrollIntoView(true);", option)
@@ -61,6 +63,10 @@ def blinkit(keyword, pincode):
                 break
             except Exception as e:
                 print("Exception occurred while clicking:", str(e))
+
+    if flag == False:
+        print("Location not found.")
+        return [], "0/0"
 
     product_details = []
     count = 0
