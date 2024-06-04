@@ -84,7 +84,7 @@ def population_Data(w1,w2):
                 ser=pd.Series(ans,index=headers)
                 result=pd.concat([result,ser.to_frame().T], ignore_index=True)
                 j=j+1                   
-            i=i+4
+            i=i+3
             pass
         else:
             i=i+1

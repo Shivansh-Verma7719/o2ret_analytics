@@ -1,7 +1,7 @@
 import pandas as pd
-from helper.sheet import get_sheet
-
-def searchSubDistrict(name,a):
+a=pd.read_excel("PIN Code Mapping.xlsx")
+c=pd.read_excel("Copy of Prosperity Index.xlsx")
+def searchSubDistrict(name):
     i=0
     while i<36:
         if str(a.iloc[i][5]).strip()==str(name).strip():
@@ -11,9 +11,9 @@ def searchSubDistrict(name,a):
         pass
     return -1
 
-def allPincodes(name,a):
+def allPincodes(name):
     arr=[]
-    row=searchSubDistrict(name,a)
+    row=searchSubDistrict(name)
     if(row==-1):
         return
     numberOfPincodes=a.iloc[row][6]
@@ -23,18 +23,14 @@ def allPincodes(name,a):
         i=i+1
     return numberOfPincodes,arr  
 def prosperityIndex():
-    url_pincode = 'https://docs.google.com/spreadsheets/d/1gb1Vx1rnzocZRq4q4sq4NUyaM_go6tBAaAbCMVEptcE'
-    url_prosperity = 'https://docs.google.com/spreadsheets/d/13rebDqDJG0eqxq8bnBP08WZ0iX2Yg9XGngwbymw8zr8'
-    a = get_sheet(url_pincode)
-    c = get_sheet(url_prosperity)
-    headers=["PinCodes","Name","Total- Adjusted average household size","Total- Pincode Prosperity Score","Total- Married Couples per household","Rural- Adjusted average household size","Rural- Pincode Prosperity Score","Rural- Married Couples per household","Urban- Adjusted average household size","Urban- Pincode Prosperity Score","Urban- Married Couples per household"]
+    headers=["PinCodes","Name","Total- Adjusted average household size","Total- (0.6×Percentage of Total Good)+(0.1×Percentage of Households with Internet)+(0.1×Percentage of Households with Car/Jeep/Van)+(0.1×Percentage of Permanent Structures)+(0.1×Percentage of Households availing Banking Services)","Total- Married Couples per household","Rural- Adjusted average household size","Rural- (0.6×Percentage of Total Good)+(0.1×Percentage of Households with Internet)+(0.1×Percentage of Households with Car/Jeep/Van)+(0.1×Percentage of Permanent Structures)+(0.1×Percentage of Households availing Banking Services)","Rural- Married Couples per household","Urban- Adjusted average household size","Urban- (0.6×Percentage of Total Good)+(0.1×Percentage of Households with Internet)+(0.1×Percentage of Households with Car/Jeep/Van)+(0.1×Percentage of Permanent Structures)+(0.1×Percentage of Households availing Banking Services)","Urban- Married Couples per household"]
     result=pd.DataFrame(columns=headers)
     i=6
     while(i<93):
         if(c.iloc[i][3]!='00000'):
         
             try:
-                n, arr = allPincodes(c.iloc[i][5], a)  # Properly unpack the returned values
+                n, arr = allPincodes(c.iloc[i][5])  # Properly unpack the returned values
             except Exception as e:
                 print(f"Error unpacking result for sub-district: {c.iloc[i][5]}")
                 i += 1
