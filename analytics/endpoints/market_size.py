@@ -35,7 +35,7 @@ def population_Data(w1,w2):
     result=pd.DataFrame(columns=headers)
     index=0
     i=9
-    while (i<114 and i+1<114 and i+2<114 and i+3<114):
+    while (i<114 and i+1<=114 and i+2<=114 and i+3<=114):
         if(b.iloc[i][4]=='SUB-DISTRICT'):
             try:
                 n, arr = allPincodes(b.iloc[i][5], a)  # Properly unpack the returned values
