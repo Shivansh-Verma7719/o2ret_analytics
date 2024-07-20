@@ -2,10 +2,10 @@ const puppeteer = require('puppeteer');
 const xlsx = require('xlsx');
 const fs = require('fs');
 
-const locationToScrape = 'mumbai'; // Change this variable to the desired location
+// const locationToScrape = 'chennai'; // Change this variable to the desired location
 
 // Load the Excel file
-const workbook = xlsx.readFile('telematics_data_with_specs.xlsx');
+const workbook = xlsx.readFile('telematics_data_with_specs_interrupted.xlsx');
 const sheetName = workbook.SheetNames[0];
 const worksheet = workbook.Sheets[sheetName];
 
@@ -28,10 +28,9 @@ async function extractProductInfo(url) {
         'referrer': 'https://www.google.co.in/'
     });
 
-    await page.goto(url, { waitUntil: 'networkidle2' });
+    await page.goto(url, { waitUntil: 'networkidle0' });
 
     const productSpecSelector = '#pdpD div.dtlsec1 div table tbody';
-    const productDescSelector = '#pdpD div.pdest1.color div.fs16.lh28.pdpCtsr ul li';
 
     const specs = await page.evaluate((selector) => {
         const rows = document.querySelectorAll(selector + ' tr');
@@ -41,13 +40,8 @@ async function extractProductInfo(url) {
         }).join(', ');
     }, productSpecSelector);
 
-    const description = await page.evaluate((selector) => {
-        const descElement = document.querySelector(selector);
-        return descElement ? descElement.innerText : '';
-    }, productDescSelector);
-
     await browser.close();
-    return { specs, description };
+    return { specs };
 }
 
 // Function to save data to Excel file
@@ -62,7 +56,7 @@ function saveToExcel(data, filename) {
 async function updateExcelFile() {
     process.on('SIGINT', () => {
         console.log('Interrupted, saving data to Excel file...');
-        saveToExcel(data, 'telematics_data_with_specs_interrupted.xlsx');
+        saveToExcel(data, `telematics_data_with_specs_interrupted.xlsx`);
         process.exit();
     });
 
@@ -71,24 +65,28 @@ async function updateExcelFile() {
             continue;
         }
 
+        // Skip rows that already have Specs data
+        console.log(data[i].Specs);
+        if (data[i].Specs) {
+            continue;
+        }
+
         const { productLink } = data[i];
         console.log(`Extracting data for: ${productLink}`);
 
         // Add a random delay between 1 and 3 seconds
-        await delay(Math.floor(Math.random() * 2000) + 1000);
+        // await delay(Math.floor(Math.random() * 2000) + 1000);
 
-        const { specs, description } = await extractProductInfo(productLink);
+        const { specs } = await extractProductInfo(productLink);
 
         // Log the extracted information
         console.log(`Specs: ${specs}`);
-        console.log(`Description: ${description}`);
-
+        
         data[i]['Specs'] = specs;
-        data[i]['Description'] = description;
     }
 
     // Save updated data to Excel file
-    saveToExcel(data, `telematics_data_with_specs_${locationToScrape}.xlsx`);
+    saveToExcel(data, `telematics_data_with_specs_interrupted.xlsx`);
     console.log('Excel file updated successfully!');
 }
 
