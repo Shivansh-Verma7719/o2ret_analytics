@@ -18,17 +18,18 @@ def sales_to_hex_color(sales, min_sales, max_sales):
     return hex_color
 
 # Load the sales data from the Excel file
-file_path = 'Sales-Pincode.xlsx'  # Replace with your file path
+file_path = 'geo.xlsx'  # Replace with your file path
 data = pd.read_excel(file_path)
 
 # Find the minimum and maximum sales values
 min_sales = data['Sales'].min()
+print(min_sales)
 max_sales = data['Sales'].max()
+print(max_sales)
 
 # Generate hex colors for each pincode based on sales value
 data['Color'] = data['Sales'].apply(lambda x: sales_to_hex_color(x, min_sales, max_sales))
 
-# Save the pincode, sales, and color mapping to a new Excel file
 output_file_path = 'pincode_sales_color_mapping.xlsx'
 data.to_excel(output_file_path, index=False)
 

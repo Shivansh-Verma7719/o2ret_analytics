@@ -1,0 +1,56 @@
+@import url("https://fonts.googleapis.com/css2?family=Noto+Sans:ital,wght@0,100..900;1,100..900&display=swap");
+
+.leaflet-control-layers-expanded {
+  background-color: #003f98;
+  color: white;
+  border-radius: 8px;
+  box-shadow: 0 2px 15px rgba(0, 0, 0, 0.3);
+  padding: 10px;
+  min-width: 300px;
+  font-size: medium;
+  font-family: "Noto Sans", sans-serif;
+}
+#popup{
+  display: flex;
+  flex-direction: row;
+  min-width: 600px;
+  font-family: "Noto Sans", sans-serif;
+}
+#popup div{
+  font-size: 12px;
+}
+#why-btn{
+  width: 100%;
+  background-color: #003f98;
+  color: white;
+  border-radius: 8px;
+  padding: 5px 10px;
+  box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
+  font-size: medium;
+  font-family: "Noto Sans", sans-serif;
+}
+
+.leaflet-control-layers-base,
+.leaflet-control-layers-overlays {
+  margin-bottom: 10px;
+}
+
+.leaflet-control-layers-selector {
+  margin-right: 8px;
+}
+
+.leaflet-control-layers-label {
+  margin: 5px 0;
+  display: flex;
+  align-items: center;
+}
+
+.leaflet-control-layers-expanded .leaflet-control-layers-list label {
+  padding: 5px 10px;
+}
+
+.leaflet-control-layers-expanded .leaflet-control-layers-list label:hover {
+  background-color: #f4f4f4;
+  color: black;
+  border-radius: 4px;
+}

@@ -18,21 +18,19 @@ def sales_to_hex_color(market_penetration, min_penetration, max_penetration):
     return hex_color
 
 # Load the data from the CSV file
-file_path = 'data.csv'  # Replace with your file path
-data = pd.read_csv(file_path)
-
-# Calculate market penetration for each pincode
-data['Market Penetration'] = data['Sales'] / data['Relevant Market Size']
+file_path = 'geo.xlsx'  # Replace with your file path
+data = pd.read_excel(file_path)
 
 # Find the minimum and maximum market penetration values
 min_penetration = data['Market Penetration'].min()
 max_penetration = data['Market Penetration'].max()
+print(min_penetration)
+print(max_penetration)
 
 # Generate hex colors for each pincode based on market penetration value
 data['Color'] = data['Market Penetration'].apply(lambda x: sales_to_hex_color(x, min_penetration, max_penetration))
 
 # Save the pincode, market penetration, and color mapping to a new Excel file
 output_file_path = 'pincode_market_penetration_color_mapping.xlsx'
-data[['Pincode', 'Market Penetration', 'Color']].to_excel(output_file_path, index=False)
-
+data.to_excel(output_file_path, index=False)
 print(f"Output file saved as {output_file_path}")
