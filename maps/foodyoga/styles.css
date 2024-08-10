@@ -1,0 +1,26 @@
+@import url("https://fonts.googleapis.com/css2?family=Noto+Sans:ital,wght@0,100..900;1,100..900&display=swap");
+
+#popup{
+    display: flex;
+    flex-direction: row;
+    min-width: 600px;
+    font-family: "Noto Sans", sans-serif;
+  }
+#popup div a{
+    color: white;
+    text-decoration: none;
+}
+  #popup div{
+    font-size: 12px;
+  }
+  #why-btn{
+    width: 100%;
+    background-color: #003f98;
+    color: white;
+    border-radius: 8px;
+    padding: 5px 10px;
+    box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
+    font-size: medium;
+    font-family: "Noto Sans", sans-serif;
+  }
+

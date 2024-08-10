@@ -1,0 +1,330 @@
+<!DOCTYPE html>
+<html>
+<head>
+    
+    <meta http-equiv="content-type" content="text/html; charset=UTF-8" />
+    
+    <link rel="stylesheet" type="text/css" href="styles.css"/>
+    <script>
+            function showSecondaryPopup(storeId) {
+                var popup = document.getElementById(storeId + '-secondary-popup');
+                popup.style.display = popup.style.display === 'none' ? 'block' : 'none';
+            }
+        </script>
+    
+    
+        <script>
+            L_NO_TOUCH = false;
+            L_DISABLE_3D = false;
+        </script>
+    
+    <style>html, body {width: 100%;height: 100%;margin: 0;padding: 0;}</style>
+    <style>#map {position:absolute;top:0;bottom:0;right:0;left:0;}</style>
+    <script src="https://cdn.jsdelivr.net/npm/leaflet@1.9.3/dist/leaflet.js"></script>
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Leaflet.awesome-markers/2.0.2/leaflet.awesome-markers.js"></script>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/leaflet@1.9.3/dist/leaflet.css"/>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css"/>
+    <link rel="stylesheet" href="https://netdna.bootstrapcdn.com/bootstrap/3.0.0/css/bootstrap-glyphicons.css"/>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.2.0/css/all.min.css"/>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/Leaflet.awesome-markers/2.0.2/leaflet.awesome-markers.css"/>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/python-visualization/folium/folium/templates/leaflet.awesome.rotate.min.css"/>
+    
+            <meta name="viewport" content="width=device-width,
+                initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+            <style>
+                #map_f2dc74618b330cd7ddd300d4bfcbda23 {
+                    position: relative;
+                    width: 100.0%;
+                    height: 100.0%;
+                    left: 0.0%;
+                    top: 0.0%;
+                }
+                .leaflet-container { font-size: 1rem; }
+            </style>
+        
+</head>
+<body>
+    
+    
+            <div class="folium-map" id="map_f2dc74618b330cd7ddd300d4bfcbda23" ></div>
+        
+</body>
+<script>
+    
+    
+            var map_f2dc74618b330cd7ddd300d4bfcbda23 = L.map(
+                "map_f2dc74618b330cd7ddd300d4bfcbda23",
+                {
+                    center: [33.936617999999996, -84.38159999999999],
+                    crs: L.CRS.EPSG3857,
+                    zoom: 10,
+                    zoomControl: true,
+                    preferCanvas: false,
+                }
+            );
+
+            
+
+        
+    
+            var tile_layer_7fb622d5736d2caec9f48fa6c52bac9d = L.tileLayer(
+                "https://tile.openstreetmap.org/{z}/{x}/{y}.png",
+                {"attribution": "\u0026copy; \u003ca href=\"https://www.openstreetmap.org/copyright\"\u003eOpenStreetMap\u003c/a\u003e contributors", "detectRetina": false, "maxNativeZoom": 19, "maxZoom": 19, "minZoom": 0, "noWrap": false, "opacity": 1, "subdomains": "abc", "tms": false}
+            );
+        
+    
+            tile_layer_7fb622d5736d2caec9f48fa6c52bac9d.addTo(map_f2dc74618b330cd7ddd300d4bfcbda23);
+        
+    
+            var circle_f6b31f7d8d2b420f6f09122fef301348 = L.circle(
+                [34.17947, -84.5491],
+                {"bubblingMouseEvents": true, "color": "blue", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "blue", "fillOpacity": 0.6, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 4318.5, "stroke": true, "weight": 3}
+            ).addTo(map_f2dc74618b330cd7ddd300d4bfcbda23);
+        
+    
+        var popup_2f5c16fc92c49942563fb39a3aa978d0 = L.popup({"maxWidth": 700});
+
+        
+            
+                var html_c887b6fe5ee1abdef0aafa9116829516 = $(`<div id="html_c887b6fe5ee1abdef0aafa9116829516" style="width: 100.0%; height: 100.0%;">         <div id="popup">         <div style="background-color: #003f98; padding: 10px; border-radius: 5px; color: white;">             <strong>Name:</strong> YogaSix BridgeMill<br>             <strong>Address:</strong> 3760 Sixes Rd Suite #118, Canton, GA 30114<br>             <strong>Phone:</strong> (770) 520-6270<br>             <strong>Email:</strong> bridgemill@yogasix.com<br>             <strong>URL:</strong> <a href="http://www.yogasix.com/bridge-mill">http://www.yogasix.com/bridge-mill</a><br>             <strong>Facebook Profile:</strong> <a href="https://www.facebook.com/yogasix">https://www.facebook.com/yogasix</a><br>             <strong>Instagram Handle:</strong><a href="https://www.instagram.com/yogasix">https://www.instagram.com/yogasix</a><br>             <strong>LinkedIn:</strong> <a href="https://www.linkedin.com/company/yoga-six/">https://www.linkedin.com/company/yoga-six/</a><br>             <strong>Twitter:</strong> <a href="https://twitter.com/Yoga_Six">https://twitter.com/Yoga_Six</a><br>             <strong>YouTube:</strong> <a href="https://www.youtube.com/channel/UCL2512NzMCHGhuEkdLSSCQg">https://www.youtube.com/channel/UCL2512NzMCHGhuEkdLSSCQg</a><br>             <br/>             <strong>Primary Category:</strong> Yoga studios<br>             <strong>Category:</strong> Yoga studios<br>             <strong>GTM Score:</strong> 52<br>             <strong>Radius:</strong> 4 km<br>             <strong>What to Sell:</strong> High AOV<br>             <strong>Insight:</strong> FoodYoga should sell High AOV in a 4 km radius of YogaSix BridgeMill via Instagram.<br>             <strong>Summary:</strong> Given YogaSix BridgeMill's large, affluent population and excellent rating, targeting a 4 km radius with High AOV packs via Instagram is ideal for leveraging its strong market position.<br>             <button onclick="showSecondaryPopup('30114')" id="why-btn">Why?</button>         </div>         <div id="30114-secondary-popup" style="display:none; background-color: #003f98; padding: 10px; border-radius: 5px; color: white;">             <strong>Total Population:</strong> 58021<br>             <strong>Male Population:</strong> 29627<br>             <strong>Female Population:</strong> 28394<br>             <strong>Median Income:</strong> 106310<br>             <strong>Mean Income:</strong> 132456<br>             <strong>Star Count:</strong> 5.0<br>             <strong>Rating Count:</strong> 22<br>         </div>         </div>     </div>`)[0];
+                popup_2f5c16fc92c49942563fb39a3aa978d0.setContent(html_c887b6fe5ee1abdef0aafa9116829516);
+            
+        
+
+        circle_f6b31f7d8d2b420f6f09122fef301348.bindPopup(popup_2f5c16fc92c49942563fb39a3aa978d0)
+        ;
+
+        
+    
+    
+            var marker_26ad2ee09c6507810a6f3d8e1a9a9737 = L.marker(
+                [34.17947, -84.5491],
+                {}
+            ).addTo(map_f2dc74618b330cd7ddd300d4bfcbda23);
+        
+    
+            var icon_e16bbec5a53e4b69f558ff68e25c3fcb = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "store", "iconColor": "white", "markerColor": "red", "prefix": "fa"}
+            );
+            marker_26ad2ee09c6507810a6f3d8e1a9a9737.setIcon(icon_e16bbec5a53e4b69f558ff68e25c3fcb);
+        
+    
+        var popup_f4469107960a530b2efae6cddc906c10 = L.popup({"maxWidth": 700});
+
+        
+            
+                var html_16b17148e11b08338fc6bfeea094218f = $(`<div id="html_16b17148e11b08338fc6bfeea094218f" style="width: 100.0%; height: 100.0%;">         <div id="popup">         <div style="background-color: #003f98; padding: 10px; border-radius: 5px; color: white;">             <strong>Name:</strong> YogaSix BridgeMill<br>             <strong>Address:</strong> 3760 Sixes Rd Suite #118, Canton, GA 30114<br>             <strong>Phone:</strong> (770) 520-6270<br>             <strong>Email:</strong> bridgemill@yogasix.com<br>             <strong>URL:</strong> <a href="http://www.yogasix.com/bridge-mill">http://www.yogasix.com/bridge-mill</a><br>             <strong>Facebook Profile:</strong> <a href="https://www.facebook.com/yogasix">https://www.facebook.com/yogasix</a><br>             <strong>Instagram Handle:</strong><a href="https://www.instagram.com/yogasix">https://www.instagram.com/yogasix</a><br>             <strong>LinkedIn:</strong> <a href="https://www.linkedin.com/company/yoga-six/">https://www.linkedin.com/company/yoga-six/</a><br>             <strong>Twitter:</strong> <a href="https://twitter.com/Yoga_Six">https://twitter.com/Yoga_Six</a><br>             <strong>YouTube:</strong> <a href="https://www.youtube.com/channel/UCL2512NzMCHGhuEkdLSSCQg">https://www.youtube.com/channel/UCL2512NzMCHGhuEkdLSSCQg</a><br>             <br/>             <strong>Primary Category:</strong> Yoga studios<br>             <strong>Category:</strong> Yoga studios<br>             <strong>GTM Score:</strong> 52<br>             <strong>Radius:</strong> 4 km<br>             <strong>What to Sell:</strong> High AOV<br>             <strong>Insight:</strong> FoodYoga should sell High AOV in a 4 km radius of YogaSix BridgeMill via Instagram.<br>             <strong>Summary:</strong> Given YogaSix BridgeMill's large, affluent population and excellent rating, targeting a 4 km radius with High AOV packs via Instagram is ideal for leveraging its strong market position.<br>             <button onclick="showSecondaryPopup('30114')" id="why-btn">Why?</button>         </div>         <div id="30114-secondary-popup" style="display:none; background-color: #003f98; padding: 10px; border-radius: 5px; color: white;">             <strong>Total Population:</strong> 58021<br>             <strong>Male Population:</strong> 29627<br>             <strong>Female Population:</strong> 28394<br>             <strong>Median Income:</strong> 106310<br>             <strong>Mean Income:</strong> 132456<br>             <strong>Star Count:</strong> 5.0<br>             <strong>Rating Count:</strong> 22<br>         </div>         </div>     </div>`)[0];
+                popup_f4469107960a530b2efae6cddc906c10.setContent(html_16b17148e11b08338fc6bfeea094218f);
+            
+        
+
+        marker_26ad2ee09c6507810a6f3d8e1a9a9737.bindPopup(popup_f4469107960a530b2efae6cddc906c10)
+        ;
+
+        
+    
+    
+            var circle_9722150cc069fca61a4497cb4b829a83 = L.circle(
+                [34.09207, -84.3391],
+                {"bubblingMouseEvents": true, "color": "blue", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "blue", "fillOpacity": 0.6, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 8402.307143, "stroke": true, "weight": 3}
+            ).addTo(map_f2dc74618b330cd7ddd300d4bfcbda23);
+        
+    
+        var popup_f31a0365d8d84672920c09bbe77ba90b = L.popup({"maxWidth": 700});
+
+        
+            
+                var html_be63a92d7f354442476f3d3b77feb7a0 = $(`<div id="html_be63a92d7f354442476f3d3b77feb7a0" style="width: 100.0%; height: 100.0%;">         <div id="popup">         <div style="background-color: #003f98; padding: 10px; border-radius: 5px; color: white;">             <strong>Name:</strong> The Yoga Loft Studio<br>             <strong>Address:</strong> 12655 Birmingham Hwy Suite 102, Alpharetta, GA 30004<br>             <strong>Phone:</strong> (770) 767-0115<br>             <strong>Email:</strong> carly@theyogaloftstudio.com<br>             <strong>URL:</strong> <a href="https://www.theyogaloftstudio.com/">https://www.theyogaloftstudio.com/</a><br>             <strong>Facebook Profile:</strong> <a href="https://www.facebook.com/theyogaloftstudio">https://www.facebook.com/theyogaloftstudio</a><br>             <strong>Instagram Handle:</strong><a href="http://instagram.com/theyogaloftstudio">http://instagram.com/theyogaloftstudio</a><br>             <strong>LinkedIn:</strong> <a href="nan">nan</a><br>             <strong>Twitter:</strong> <a href="https://twitter.com/theyogaloftatl">https://twitter.com/theyogaloftatl</a><br>             <strong>YouTube:</strong> <a href="nan">nan</a><br>             <br/>             <strong>Primary Category:</strong> Yoga studios<br>             <strong>Category:</strong> Yoga studios<br>             <strong>GTM Score:</strong> 66<br>             <strong>Radius:</strong> 8 km<br>             <strong>What to Sell:</strong> High AOV<br>             <strong>Insight:</strong> FoodYoga should sell High AOV in a 8 km radius of The Yoga Loft Studio via Instagram.<br>             <strong>Summary:</strong>  With its high rating and affluent, populous area, The Yoga Loft Studio is perfect for targeting an 8 km radius with High AOV packs via Instagram.<br>             <button onclick="showSecondaryPopup('30004')" id="why-btn">Why?</button>         </div>         <div id="30004-secondary-popup" style="display:none; background-color: #003f98; padding: 10px; border-radius: 5px; color: white;">             <strong>Total Population:</strong> 66406<br>             <strong>Male Population:</strong> 33179<br>             <strong>Female Population:</strong> 33227<br>             <strong>Median Income:</strong> 164029<br>             <strong>Mean Income:</strong> 217302<br>             <strong>Star Count:</strong> 5.0<br>             <strong>Rating Count:</strong> 21<br>         </div>         </div>     </div>`)[0];
+                popup_f31a0365d8d84672920c09bbe77ba90b.setContent(html_be63a92d7f354442476f3d3b77feb7a0);
+            
+        
+
+        circle_9722150cc069fca61a4497cb4b829a83.bindPopup(popup_f31a0365d8d84672920c09bbe77ba90b)
+        ;
+
+        
+    
+    
+            var marker_f1546d403f51c1267d7728d49d493d0f = L.marker(
+                [34.09207, -84.3391],
+                {}
+            ).addTo(map_f2dc74618b330cd7ddd300d4bfcbda23);
+        
+    
+            var icon_a78ffe50f732485dc537a9b8df8cea0e = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "store", "iconColor": "white", "markerColor": "red", "prefix": "fa"}
+            );
+            marker_f1546d403f51c1267d7728d49d493d0f.setIcon(icon_a78ffe50f732485dc537a9b8df8cea0e);
+        
+    
+        var popup_55f74ccecab47dd13126698a2476ba0d = L.popup({"maxWidth": 700});
+
+        
+            
+                var html_6402049fae4ccb4ee062cfc938232798 = $(`<div id="html_6402049fae4ccb4ee062cfc938232798" style="width: 100.0%; height: 100.0%;">         <div id="popup">         <div style="background-color: #003f98; padding: 10px; border-radius: 5px; color: white;">             <strong>Name:</strong> The Yoga Loft Studio<br>             <strong>Address:</strong> 12655 Birmingham Hwy Suite 102, Alpharetta, GA 30004<br>             <strong>Phone:</strong> (770) 767-0115<br>             <strong>Email:</strong> carly@theyogaloftstudio.com<br>             <strong>URL:</strong> <a href="https://www.theyogaloftstudio.com/">https://www.theyogaloftstudio.com/</a><br>             <strong>Facebook Profile:</strong> <a href="https://www.facebook.com/theyogaloftstudio">https://www.facebook.com/theyogaloftstudio</a><br>             <strong>Instagram Handle:</strong><a href="http://instagram.com/theyogaloftstudio">http://instagram.com/theyogaloftstudio</a><br>             <strong>LinkedIn:</strong> <a href="nan">nan</a><br>             <strong>Twitter:</strong> <a href="https://twitter.com/theyogaloftatl">https://twitter.com/theyogaloftatl</a><br>             <strong>YouTube:</strong> <a href="nan">nan</a><br>             <br/>             <strong>Primary Category:</strong> Yoga studios<br>             <strong>Category:</strong> Yoga studios<br>             <strong>GTM Score:</strong> 66<br>             <strong>Radius:</strong> 8 km<br>             <strong>What to Sell:</strong> High AOV<br>             <strong>Insight:</strong> FoodYoga should sell High AOV in a 8 km radius of The Yoga Loft Studio via Instagram.<br>             <strong>Summary:</strong>  With its high rating and affluent, populous area, The Yoga Loft Studio is perfect for targeting an 8 km radius with High AOV packs via Instagram.<br>             <button onclick="showSecondaryPopup('30004')" id="why-btn">Why?</button>         </div>         <div id="30004-secondary-popup" style="display:none; background-color: #003f98; padding: 10px; border-radius: 5px; color: white;">             <strong>Total Population:</strong> 66406<br>             <strong>Male Population:</strong> 33179<br>             <strong>Female Population:</strong> 33227<br>             <strong>Median Income:</strong> 164029<br>             <strong>Mean Income:</strong> 217302<br>             <strong>Star Count:</strong> 5.0<br>             <strong>Rating Count:</strong> 21<br>         </div>         </div>     </div>`)[0];
+                popup_55f74ccecab47dd13126698a2476ba0d.setContent(html_6402049fae4ccb4ee062cfc938232798);
+            
+        
+
+        marker_f1546d403f51c1267d7728d49d493d0f.bindPopup(popup_55f74ccecab47dd13126698a2476ba0d)
+        ;
+
+        
+    
+    
+            var circle_0084ae78058989b9ec698ca5b736b82a = L.circle(
+                [33.77966, -84.3878],
+                {"bubblingMouseEvents": true, "color": "blue", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "blue", "fillOpacity": 0.6, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 3659.657143, "stroke": true, "weight": 3}
+            ).addTo(map_f2dc74618b330cd7ddd300d4bfcbda23);
+        
+    
+        var popup_5e6ddc9ef4e7a5c5d44367fd93f32231 = L.popup({"maxWidth": 700});
+
+        
+            
+                var html_02d840df434b217f851d276cdca8d7e0 = $(`<div id="html_02d840df434b217f851d276cdca8d7e0" style="width: 100.0%; height: 100.0%;">         <div id="popup">         <div style="background-color: #003f98; padding: 10px; border-radius: 5px; color: white;">             <strong>Name:</strong> evolation yoga atlanta<br>             <strong>Address:</strong> 950 W Peachtree St NW #210, Atlanta, GA 30309<br>             <strong>Phone:</strong> (844) 287-4420<br>             <strong>Email:</strong> atlanta@evolationyoga.com<br>             <strong>URL:</strong> <a href="http://www.evolationyogaatlanta.com/">http://www.evolationyogaatlanta.com/</a><br>             <strong>Facebook Profile:</strong> <a href="https://www.facebook.com/evolationyogaatlanta">https://www.facebook.com/evolationyogaatlanta</a><br>             <strong>Instagram Handle:</strong><a href="https://www.instagram.com/evolationyogaatlanta/">https://www.instagram.com/evolationyogaatlanta/</a><br>             <strong>LinkedIn:</strong> <a href="nan">nan</a><br>             <strong>Twitter:</strong> <a href="https://twitter.com/evolationyogATL">https://twitter.com/evolationyogATL</a><br>             <strong>YouTube:</strong> <a href="nan">nan</a><br>             <br/>             <strong>Primary Category:</strong> Yoga studios<br>             <strong>Category:</strong> Yoga studios<br>             <strong>GTM Score:</strong> 75<br>             <strong>Radius:</strong> 3 km<br>             <strong>What to Sell:</strong> High AOV<br>             <strong>Insight:</strong> FoodYoga should sell High AOV in a 4 km radius of evolation yoga atlanta via Instagram.<br>             <strong>Summary:</strong>  Evolation Yoga Atlanta, with its high rating and affluent, densely populated area, is well-suited for targeting a 4 km radius with High AOV packs via Instagram.<br>             <button onclick="showSecondaryPopup('30309')" id="why-btn">Why?</button>         </div>         <div id="30309-secondary-popup" style="display:none; background-color: #003f98; padding: 10px; border-radius: 5px; color: white;">             <strong>Total Population:</strong> 29600<br>             <strong>Male Population:</strong> 16155<br>             <strong>Female Population:</strong> 13445<br>             <strong>Median Income:</strong> 174336<br>             <strong>Mean Income:</strong> 280837<br>             <strong>Star Count:</strong> 5.0<br>             <strong>Rating Count:</strong> 683<br>         </div>         </div>     </div>`)[0];
+                popup_5e6ddc9ef4e7a5c5d44367fd93f32231.setContent(html_02d840df434b217f851d276cdca8d7e0);
+            
+        
+
+        circle_0084ae78058989b9ec698ca5b736b82a.bindPopup(popup_5e6ddc9ef4e7a5c5d44367fd93f32231)
+        ;
+
+        
+    
+    
+            var marker_7e5437beca52eccf09672f4429b6dd27 = L.marker(
+                [33.77966, -84.3878],
+                {}
+            ).addTo(map_f2dc74618b330cd7ddd300d4bfcbda23);
+        
+    
+            var icon_3ee39c11e64e752f85c26b62b04a0736 = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "store", "iconColor": "white", "markerColor": "red", "prefix": "fa"}
+            );
+            marker_7e5437beca52eccf09672f4429b6dd27.setIcon(icon_3ee39c11e64e752f85c26b62b04a0736);
+        
+    
+        var popup_a42d528e5c8f275254b343700160ddc9 = L.popup({"maxWidth": 700});
+
+        
+            
+                var html_17adb777d840fab36421458aeae546f2 = $(`<div id="html_17adb777d840fab36421458aeae546f2" style="width: 100.0%; height: 100.0%;">         <div id="popup">         <div style="background-color: #003f98; padding: 10px; border-radius: 5px; color: white;">             <strong>Name:</strong> evolation yoga atlanta<br>             <strong>Address:</strong> 950 W Peachtree St NW #210, Atlanta, GA 30309<br>             <strong>Phone:</strong> (844) 287-4420<br>             <strong>Email:</strong> atlanta@evolationyoga.com<br>             <strong>URL:</strong> <a href="http://www.evolationyogaatlanta.com/">http://www.evolationyogaatlanta.com/</a><br>             <strong>Facebook Profile:</strong> <a href="https://www.facebook.com/evolationyogaatlanta">https://www.facebook.com/evolationyogaatlanta</a><br>             <strong>Instagram Handle:</strong><a href="https://www.instagram.com/evolationyogaatlanta/">https://www.instagram.com/evolationyogaatlanta/</a><br>             <strong>LinkedIn:</strong> <a href="nan">nan</a><br>             <strong>Twitter:</strong> <a href="https://twitter.com/evolationyogATL">https://twitter.com/evolationyogATL</a><br>             <strong>YouTube:</strong> <a href="nan">nan</a><br>             <br/>             <strong>Primary Category:</strong> Yoga studios<br>             <strong>Category:</strong> Yoga studios<br>             <strong>GTM Score:</strong> 75<br>             <strong>Radius:</strong> 3 km<br>             <strong>What to Sell:</strong> High AOV<br>             <strong>Insight:</strong> FoodYoga should sell High AOV in a 4 km radius of evolation yoga atlanta via Instagram.<br>             <strong>Summary:</strong>  Evolation Yoga Atlanta, with its high rating and affluent, densely populated area, is well-suited for targeting a 4 km radius with High AOV packs via Instagram.<br>             <button onclick="showSecondaryPopup('30309')" id="why-btn">Why?</button>         </div>         <div id="30309-secondary-popup" style="display:none; background-color: #003f98; padding: 10px; border-radius: 5px; color: white;">             <strong>Total Population:</strong> 29600<br>             <strong>Male Population:</strong> 16155<br>             <strong>Female Population:</strong> 13445<br>             <strong>Median Income:</strong> 174336<br>             <strong>Mean Income:</strong> 280837<br>             <strong>Star Count:</strong> 5.0<br>             <strong>Rating Count:</strong> 683<br>         </div>         </div>     </div>`)[0];
+                popup_a42d528e5c8f275254b343700160ddc9.setContent(html_17adb777d840fab36421458aeae546f2);
+            
+        
+
+        marker_7e5437beca52eccf09672f4429b6dd27.bindPopup(popup_a42d528e5c8f275254b343700160ddc9)
+        ;
+
+        
+    
+    
+            var circle_3b670d7c9b843264c66861692b3ea12c = L.circle(
+                [33.8058, -84.3414],
+                {"bubblingMouseEvents": true, "color": "blue", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "blue", "fillOpacity": 0.6, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 5731.785714, "stroke": true, "weight": 3}
+            ).addTo(map_f2dc74618b330cd7ddd300d4bfcbda23);
+        
+    
+        var popup_cdc8ff060b981292f57d7cf09605b3c0 = L.popup({"maxWidth": 700});
+
+        
+            
+                var html_d9fa4296b298be1208f17d970929425e = $(`<div id="html_d9fa4296b298be1208f17d970929425e" style="width: 100.0%; height: 100.0%;">         <div id="popup">         <div style="background-color: #003f98; padding: 10px; border-radius: 5px; color: white;">             <strong>Name:</strong> Pure Motion Yoga<br>             <strong>Address:</strong> 1174-B Zonolite Pl NE, Atlanta, GA 30306<br>             <strong>Phone:</strong> (678) 777-6827<br>             <strong>Email:</strong> info@puremotionyoga.com<br>             <strong>URL:</strong> <a href="http://www.puremotionyoga.com/">http://www.puremotionyoga.com/</a><br>             <strong>Facebook Profile:</strong> <a href="https://www.facebook.com/Pure-Motion-Yoga-442438989285026/">https://www.facebook.com/Pure-Motion-Yoga-442438989285026/</a><br>             <strong>Instagram Handle:</strong><a href="https://www.instagram.com/puremotionyoga_atl/">https://www.instagram.com/puremotionyoga_atl/</a><br>             <strong>LinkedIn:</strong> <a href="nan">nan</a><br>             <strong>Twitter:</strong> <a href="http://www.twitter.com/@PureMotionY">http://www.twitter.com/@PureMotionY</a><br>             <strong>YouTube:</strong> <a href="nan">nan</a><br>             <br/>             <strong>Primary Category:</strong> Yoga studios<br>             <strong>Category:</strong> Yoga studios,Yoga instructors,Physical fitness programs,Thai massage therapists<br>             <strong>GTM Score:</strong> 57<br>             <strong>Radius:</strong> 5 km<br>             <strong>What to Sell:</strong> High AOV<br>             <strong>Insight:</strong> FoodYoga should sell High AOV in a 6 km radius of Pure Motion Yoga via Instagram.<br>             <strong>Summary:</strong>  With its excellent rating and high-income, moderately populated area, Pure Motion Yoga is ideal for targeting a 6 km radius with High AOV packs via Instagram<br>             <button onclick="showSecondaryPopup('30306')" id="why-btn">Why?</button>         </div>         <div id="30306-secondary-popup" style="display:none; background-color: #003f98; padding: 10px; border-radius: 5px; color: white;">             <strong>Total Population:</strong> 24493<br>             <strong>Male Population:</strong> 11725<br>             <strong>Female Population:</strong> 12768<br>             <strong>Median Income:</strong> 230370<br>             <strong>Mean Income:</strong> 308814<br>             <strong>Star Count:</strong> 5.0<br>             <strong>Rating Count:</strong> 37<br>         </div>         </div>     </div>`)[0];
+                popup_cdc8ff060b981292f57d7cf09605b3c0.setContent(html_d9fa4296b298be1208f17d970929425e);
+            
+        
+
+        circle_3b670d7c9b843264c66861692b3ea12c.bindPopup(popup_cdc8ff060b981292f57d7cf09605b3c0)
+        ;
+
+        
+    
+    
+            var marker_7c255997978975b0f256487a87531cb5 = L.marker(
+                [33.8058, -84.3414],
+                {}
+            ).addTo(map_f2dc74618b330cd7ddd300d4bfcbda23);
+        
+    
+            var icon_9eba6048b957a780910159d1bab4b0d9 = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "store", "iconColor": "white", "markerColor": "red", "prefix": "fa"}
+            );
+            marker_7c255997978975b0f256487a87531cb5.setIcon(icon_9eba6048b957a780910159d1bab4b0d9);
+        
+    
+        var popup_9640c0968f201ea1338c61296ed98dce = L.popup({"maxWidth": 700});
+
+        
+            
+                var html_a4393899d969d200c75859a4aa607052 = $(`<div id="html_a4393899d969d200c75859a4aa607052" style="width: 100.0%; height: 100.0%;">         <div id="popup">         <div style="background-color: #003f98; padding: 10px; border-radius: 5px; color: white;">             <strong>Name:</strong> Pure Motion Yoga<br>             <strong>Address:</strong> 1174-B Zonolite Pl NE, Atlanta, GA 30306<br>             <strong>Phone:</strong> (678) 777-6827<br>             <strong>Email:</strong> info@puremotionyoga.com<br>             <strong>URL:</strong> <a href="http://www.puremotionyoga.com/">http://www.puremotionyoga.com/</a><br>             <strong>Facebook Profile:</strong> <a href="https://www.facebook.com/Pure-Motion-Yoga-442438989285026/">https://www.facebook.com/Pure-Motion-Yoga-442438989285026/</a><br>             <strong>Instagram Handle:</strong><a href="https://www.instagram.com/puremotionyoga_atl/">https://www.instagram.com/puremotionyoga_atl/</a><br>             <strong>LinkedIn:</strong> <a href="nan">nan</a><br>             <strong>Twitter:</strong> <a href="http://www.twitter.com/@PureMotionY">http://www.twitter.com/@PureMotionY</a><br>             <strong>YouTube:</strong> <a href="nan">nan</a><br>             <br/>             <strong>Primary Category:</strong> Yoga studios<br>             <strong>Category:</strong> Yoga studios,Yoga instructors,Physical fitness programs,Thai massage therapists<br>             <strong>GTM Score:</strong> 57<br>             <strong>Radius:</strong> 5 km<br>             <strong>What to Sell:</strong> High AOV<br>             <strong>Insight:</strong> FoodYoga should sell High AOV in a 6 km radius of Pure Motion Yoga via Instagram.<br>             <strong>Summary:</strong>  With its excellent rating and high-income, moderately populated area, Pure Motion Yoga is ideal for targeting a 6 km radius with High AOV packs via Instagram<br>             <button onclick="showSecondaryPopup('30306')" id="why-btn">Why?</button>         </div>         <div id="30306-secondary-popup" style="display:none; background-color: #003f98; padding: 10px; border-radius: 5px; color: white;">             <strong>Total Population:</strong> 24493<br>             <strong>Male Population:</strong> 11725<br>             <strong>Female Population:</strong> 12768<br>             <strong>Median Income:</strong> 230370<br>             <strong>Mean Income:</strong> 308814<br>             <strong>Star Count:</strong> 5.0<br>             <strong>Rating Count:</strong> 37<br>         </div>         </div>     </div>`)[0];
+                popup_9640c0968f201ea1338c61296ed98dce.setContent(html_a4393899d969d200c75859a4aa607052);
+            
+        
+
+        marker_7c255997978975b0f256487a87531cb5.bindPopup(popup_9640c0968f201ea1338c61296ed98dce)
+        ;
+
+        
+    
+    
+            var circle_01dea50a775c053acb506c8973ac59a0 = L.circle(
+                [33.82609, -84.2906],
+                {"bubblingMouseEvents": true, "color": "blue", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "blue", "fillOpacity": 0.6, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 2161.4642860000004, "stroke": true, "weight": 3}
+            ).addTo(map_f2dc74618b330cd7ddd300d4bfcbda23);
+        
+    
+        var popup_fbfb94d3624a7e9ee687a72c6c88fa90 = L.popup({"maxWidth": 700});
+
+        
+            
+                var html_bcc5a9577c78b40c134d6b4fa6e470e4 = $(`<div id="html_bcc5a9577c78b40c134d6b4fa6e470e4" style="width: 100.0%; height: 100.0%;">         <div id="popup">         <div style="background-color: #003f98; padding: 10px; border-radius: 5px; color: white;">             <strong>Name:</strong> Vista Yoga<br>             <strong>Address:</strong> 2836 Lavista Rd Rear suite d, Decatur, GA 30033<br>             <strong>Phone:</strong> (404) 929-9642<br>             <strong>Email:</strong> info@vistayoga.com<br>             <strong>URL:</strong> <a href="http://vistayoga.com/">http://vistayoga.com/</a><br>             <strong>Facebook Profile:</strong> <a href="https://www.facebook.com/VistaYoga">https://www.facebook.com/VistaYoga</a><br>             <strong>Instagram Handle:</strong><a href="https://www.instagram.com/vistayoga/">https://www.instagram.com/vistayoga/</a><br>             <strong>LinkedIn:</strong> <a href="nan">nan</a><br>             <strong>Twitter:</strong> <a href="https://twitter.com/VistaYoga">https://twitter.com/VistaYoga</a><br>             <strong>YouTube:</strong> <a href="nan">nan</a><br>             <br/>             <strong>Primary Category:</strong> Yoga studios<br>             <strong>Category:</strong> Yoga studios,Massage therapists,Thai massage therapists<br>             <strong>GTM Score:</strong> 51<br>             <strong>Radius:</strong> 2 km<br>             <strong>What to Sell:</strong> High AOV<br>             <strong>Insight:</strong> FoodYoga should sell High AOV in a 2 km radius of Vista Yoga via Instagram.<br>             <strong>Summary:</strong> Vista Yoga, with its solid rating and affluent area, is well-suited for targeting a 2 km radius with High AOV packs via Instagram.<br>             <button onclick="showSecondaryPopup('30033')" id="why-btn">Why?</button>         </div>         <div id="30033-secondary-popup" style="display:none; background-color: #003f98; padding: 10px; border-radius: 5px; color: white;">             <strong>Total Population:</strong> 30971<br>             <strong>Male Population:</strong> 14698<br>             <strong>Female Population:</strong> 16273<br>             <strong>Median Income:</strong> 140455<br>             <strong>Mean Income:</strong> 171025<br>             <strong>Star Count:</strong> 4.8<br>             <strong>Rating Count:</strong> 27<br>         </div>         </div>     </div>`)[0];
+                popup_fbfb94d3624a7e9ee687a72c6c88fa90.setContent(html_bcc5a9577c78b40c134d6b4fa6e470e4);
+            
+        
+
+        circle_01dea50a775c053acb506c8973ac59a0.bindPopup(popup_fbfb94d3624a7e9ee687a72c6c88fa90)
+        ;
+
+        
+    
+    
+            var marker_c962301b6bc1304bc32ff145e4cc7b8a = L.marker(
+                [33.82609, -84.2906],
+                {}
+            ).addTo(map_f2dc74618b330cd7ddd300d4bfcbda23);
+        
+    
+            var icon_75ca85ef52d1eacb0d4d44e0bf15f9b6 = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "store", "iconColor": "white", "markerColor": "red", "prefix": "fa"}
+            );
+            marker_c962301b6bc1304bc32ff145e4cc7b8a.setIcon(icon_75ca85ef52d1eacb0d4d44e0bf15f9b6);
+        
+    
+        var popup_064a44e7e82f9a2718be36e3c8cbb961 = L.popup({"maxWidth": 700});
+
+        
+            
+                var html_12dd33e9448c6ef328b81dfde3767ea6 = $(`<div id="html_12dd33e9448c6ef328b81dfde3767ea6" style="width: 100.0%; height: 100.0%;">         <div id="popup">         <div style="background-color: #003f98; padding: 10px; border-radius: 5px; color: white;">             <strong>Name:</strong> Vista Yoga<br>             <strong>Address:</strong> 2836 Lavista Rd Rear suite d, Decatur, GA 30033<br>             <strong>Phone:</strong> (404) 929-9642<br>             <strong>Email:</strong> info@vistayoga.com<br>             <strong>URL:</strong> <a href="http://vistayoga.com/">http://vistayoga.com/</a><br>             <strong>Facebook Profile:</strong> <a href="https://www.facebook.com/VistaYoga">https://www.facebook.com/VistaYoga</a><br>             <strong>Instagram Handle:</strong><a href="https://www.instagram.com/vistayoga/">https://www.instagram.com/vistayoga/</a><br>             <strong>LinkedIn:</strong> <a href="nan">nan</a><br>             <strong>Twitter:</strong> <a href="https://twitter.com/VistaYoga">https://twitter.com/VistaYoga</a><br>             <strong>YouTube:</strong> <a href="nan">nan</a><br>             <br/>             <strong>Primary Category:</strong> Yoga studios<br>             <strong>Category:</strong> Yoga studios,Massage therapists,Thai massage therapists<br>             <strong>GTM Score:</strong> 51<br>             <strong>Radius:</strong> 2 km<br>             <strong>What to Sell:</strong> High AOV<br>             <strong>Insight:</strong> FoodYoga should sell High AOV in a 2 km radius of Vista Yoga via Instagram.<br>             <strong>Summary:</strong> Vista Yoga, with its solid rating and affluent area, is well-suited for targeting a 2 km radius with High AOV packs via Instagram.<br>             <button onclick="showSecondaryPopup('30033')" id="why-btn">Why?</button>         </div>         <div id="30033-secondary-popup" style="display:none; background-color: #003f98; padding: 10px; border-radius: 5px; color: white;">             <strong>Total Population:</strong> 30971<br>             <strong>Male Population:</strong> 14698<br>             <strong>Female Population:</strong> 16273<br>             <strong>Median Income:</strong> 140455<br>             <strong>Mean Income:</strong> 171025<br>             <strong>Star Count:</strong> 4.8<br>             <strong>Rating Count:</strong> 27<br>         </div>         </div>     </div>`)[0];
+                popup_064a44e7e82f9a2718be36e3c8cbb961.setContent(html_12dd33e9448c6ef328b81dfde3767ea6);
+            
+        
+
+        marker_c962301b6bc1304bc32ff145e4cc7b8a.bindPopup(popup_064a44e7e82f9a2718be36e3c8cbb961)
+        ;
+
+        
+    
+    
+            var tile_layer_a752a4f591db2f0d5a2c8876cd1cccb7 = L.tileLayer(
+                "https://mt1.google.com/vt/lyrs=m\u0026x={x}\u0026y={y}\u0026z={z}",
+                {"attribution": "Google", "detectRetina": false, "maxZoom": 18, "minZoom": 0, "noWrap": false, "opacity": 1, "subdomains": "abc", "tms": false}
+            );
+        
+    
+            tile_layer_a752a4f591db2f0d5a2c8876cd1cccb7.addTo(map_f2dc74618b330cd7ddd300d4bfcbda23);
+        
+</script>
+</html>
